@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
-import { FaSignInAlt } from "react-icons/fa";
-import Spinner from "../components/Spinner";
 import { useNavigate } from "react-router-dom";
+import { FaSignInAlt } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
 import { login, reset } from "../features/auth/authSlice";
+import Spinner from "../components/Spinner";
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -12,23 +12,37 @@ function Login() {
     password: "",
   });
 
-  const { email, password } = formData;
+  const { email, password } = formData; // destructuring
 
+  /**
+   * useDispatch() returns a reference to the dispatch function
+   * from the Redux store. You may use it to dispatch actions
+   * as needed.
+   */
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  /**
+   * useSelector() allows you to extract data from the Redux store state,
+   * using a selector function.
+   */
 
   const { user, isLoading, isError, isSuccess, message } = useSelector(
     (state) => state.auth
   );
 
   useEffect(() => {
-    if (isError) toast.error(message);
+    if (isError) {
+      toast.error(message);
+    }
 
     // Redirect when logged in
-    if (isSuccess || user) navigate("/");
+    if (isSuccess || user) {
+      navigate("/");
+    }
 
     dispatch(reset());
-  }, [isError, isSuccess, user, message, navigate, dispatch]);
+  }, [isError, isSuccess, user, navigate, message, dispatch]);
 
   const onChange = (e) => {
     setFormData((prevState) => ({
@@ -58,8 +72,7 @@ function Login() {
         <h1>
           <FaSignInAlt /> Login
         </h1>
-
-        <p>Please login</p>
+        <p>Please log in to get support</p>
       </section>
 
       <section className="form">
@@ -67,33 +80,29 @@ function Login() {
           <div className="form-group">
             <input
               type="email"
-              className="form-control"
               id="email"
               name="email"
               value={email}
               onChange={onChange}
               placeholder="Enter your email"
+              className="form-control"
               required
             />
           </div>
-
           <div className="form-group">
             <input
               type="password"
-              className="form-control"
               id="password"
               name="password"
               value={password}
               onChange={onChange}
               placeholder="Enter your password"
+              className="form-control"
               required
             />
           </div>
-
           <div className="form-group">
-            <button type="submit" className="btn-block">
-              Submit
-            </button>
+            <button className="btn btn-block">Submit</button>
           </div>
         </form>
       </section>

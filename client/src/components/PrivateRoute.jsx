@@ -2,7 +2,7 @@ import { Navigate, Outlet } from "react-router-dom";
 import { useAuthStatus } from "../hooks/useAuthStatus";
 import Spinner from "./Spinner";
 
-const PrivateRoute = () => {
+export const PrivateRoute = () => {
   const { loggedIn, checkingStatus } = useAuthStatus();
 
   if (checkingStatus) {
@@ -10,6 +10,6 @@ const PrivateRoute = () => {
   }
 
   return loggedIn ? <Outlet /> : <Navigate to="/login" />;
-};
 
-export default PrivateRoute;
+  return <div></div>;
+};

@@ -1,18 +1,16 @@
-import { Link } from "react-router-dom";
 import { FaQuestionCircle, FaTicketAlt } from "react-icons/fa";
-import Intro from "../components/intro"
-
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
     <>
-    <Intro />
       <section className="heading">
-        <p>Create a support ticket now! To solve your issues</p>
+        <h1>What do you need help with?</h1>
+        <p>Please choose from an option below</p>
       </section>
 
       <Link to="/new-ticket" className="btn btn-reverse btn-block">
-        <FaQuestionCircle /> Raise new ticket
+        <FaQuestionCircle /> Create New Ticket
       </Link>
 
       <Link to="/tickets" className="btn btn-block">

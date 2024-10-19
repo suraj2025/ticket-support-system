@@ -1,8 +1,14 @@
-import React from "react";
 import { useSelector } from "react-redux";
 
 function NoteItem({ note }) {
   const { user } = useSelector((state) => state.auth);
+
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
 
   return (
     <div
@@ -15,11 +21,9 @@ function NoteItem({ note }) {
       <h4>
         Note from {note.isStaff ? <span>Staff</span> : <span>{user.name}</span>}
       </h4>
-
       <p>{note.text}</p>
-
       <div className="note-date">
-        {new Date(note.createdAt).toLocaleString("en-US")}
+        {new Date(note.createdAt).toLocaleString("en-US", options)}
       </div>
     </div>
   );

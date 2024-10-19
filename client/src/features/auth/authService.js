@@ -1,34 +1,41 @@
-import axios from "axios";
+import axios from 'axios'
 
-const API_URL = "/api/users";
+const API_URL = 'https://ticket-support-system-u48s.onrender.com/api/users'
 
-// Registers a new user
-const register = async (userData) => {
-  const response = await axios.post(API_URL, userData);
-
+// Register user
+const register = async userData => {
+  // userData is an object with an email and password i.e {name: 'Hina', email: 'hina@*****.com', password: '******'}
+  const response = await axios.post(API_URL, userData)
+  console.log(response)
   if (response.data) {
-    localStorage.setItem("user", JSON.stringify(response.data));
+    // localStorage can only hold strings
+    localStorage.setItem('user', JSON.stringify(response.data))
   }
 
-  return response.data;
-};
+  return response.data
+}
 
-// Logins user
-const login = async (userData) => {
-  const response = await axios.post(API_URL + "/login", userData);
+// Login user
+const login = async userData => {
+  // userData is an object with an email and password i.e {email: 'arif@*****.com', password: '******'}
+  const response = await axios.post(API_URL + '/login', userData)
 
   if (response.data) {
-    localStorage.setItem("user", JSON.stringify(response.data));
+    // localStorage can only hold strings
+    // Save the user data to localStorage in a key called 'user'
+    localStorage.setItem('user', JSON.stringify(response.data))
   }
 
-  return response.data;
-};
+  return response.data
+}
 
-// Logouts user
-const logout = () => {
-  localStorage.removeItem("user");
-};
+// Logout user
+const logout = () => localStorage.removeItem('user')
 
-const authService = { register, login, logout };
+const authService = {
+  register,
+  logout,
+  login
+}
 
-export default authService;
+export default authService

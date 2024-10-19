@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 * {
   margin: 0;
@@ -6,24 +6,14 @@
   box-sizing: border-box;
 }
 
-.page-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  
-}
-
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   height: 100vh;
-  background: rgb(131,58,180);
-  background:  linear-gradient(to right, #ff6347, #ffa500, #ffd700);
 }
 
 a {
   text-decoration: none;
   color: #000;
-  font-size: 23px;
-  font-weight: bold;
 }
 
 p {
@@ -57,7 +47,7 @@ h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 1rem;
+  padding: 20px 0;
   border-bottom: 1px solid #e6e6e6;
   margin-bottom: 60px;
 }
@@ -66,14 +56,6 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.header h2 {
-  color:rgb(27, 48, 115);
-}
-
-.header h2 span{
-  color: rgb(34, 24, 49);
 }
 
 .header ul li {
@@ -86,29 +68,14 @@ h3 {
 }
 
 .header ul li a:hover {
-  color: #ffffff;
+  color: #777;
 }
 
 .header ul li a svg {
   margin-right: 5px;
 }
 
-.header-items {
-  display: flex;
-  /* justify-content: center; */
-  gap: 2rem;
-}
-.home {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
 .heading {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 50px;
@@ -116,7 +83,7 @@ h3 {
 }
 
 .heading p {
-  color: #ffffff;
+  color: #828282;
 }
 
 .boxes {
@@ -140,14 +107,9 @@ h3 {
 }
 
 .boxes a:hover {
-  color: #000000;
+  color: #777;
 }
-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  /* align-items: center; */
-}
+
 .form {
   width: 70%;
   margin: 0 auto;
@@ -175,7 +137,6 @@ form {
 }
 
 .btn {
-  margin-left: 1rem;
   padding: 10px 20px;
   border: 1px solid #000;
   border-radius: 5px;
@@ -203,46 +164,11 @@ form {
 .btn-block {
   width: 100%;
   margin-bottom: 20px;
-  
 }
-.form-group .btn-block{
-  margin: 0px;
-  padding: 10px;
-  border-radius: 7px;
-  background-color: black;
-  color: white;
-  font-size: 15px;
-  
-}
+
 .btn-sm {
   padding: 5px 15px;
   font-size: 13px;
-}
-
-.intro{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  height: 50%;
-  margin-left: 120px;
-  margin-right: 120px;
-  border-radius: 50px;
-  margin-bottom: 50px;
-}
-
-.intro p{
-  color: black;
-  font-size: 2.25rem;
-  word-spacing: 0.125rem;
-  letter-spacing: 0ch;
-  line-height: 3rem;
-}
-
-.intro img{
-  width: 75%;
-  height: 100%;
 }
 
 .btn-danger {
@@ -323,7 +249,7 @@ form {
   border-radius: 10px;
 }
 
-.status-closed {
+.status-close {
   background-color: darkred;
   color: #fff;
   border-radius: 10px;
@@ -332,25 +258,6 @@ form {
 .ticket-page {
   position: relative;
   text-align: left;
-}
-
-p.status-in-progress {
-  color: orangered;
-}
-
-p.status-waiting {
-  color: red;
-}
-
-p.status-ready {
-  color: steelblue;
-}
-
-p.status-complete {
-  color: green;
-}
-p {
-  line-height: 1.7;
 }
 
 .ticket-page h2 {
@@ -495,30 +402,5 @@ footer {
 
   .heading p {
     font-size: 1.5rem;
-  }
-}
-
-@media only screen and (min-width: 600px){
-  .intro img{
-    width: 75% !important;
-    height: 75% !important;
-  }
-
-  .heading{
-    font-size: 2rem;
-  }
-}
-
-@media only screen and (max-width: 1200px){
-  .intro{
-    display: flex;
-    flex-direction: column;
-    margin-left: 0px !important;
-    margin-right: 0px !important;
-  }
-  
-  .intro img{
-    width: 100%;
-    height: 100%;
   }
 }
